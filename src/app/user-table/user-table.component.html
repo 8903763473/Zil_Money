@@ -1,0 +1,45 @@
+<section>
+    <table class="w-100">
+        <thead>
+            <th class="bg-grey color-black tHeader">Name</th>
+            <th class="bg-grey color-black tHeader">Company Name</th>
+            <th class="bg-grey color-black tHeader">Designation</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="searchInput">
+                        <i class="bi bi-search pl-10"></i>
+                        <input type="text" class="pl-6" placeholder="Search" [(ngModel)]="search1"
+                            (input)="search(search1,1)">
+                    </div>
+                </td>
+                <td>
+                    <div class="searchInput">
+                        <i class="bi bi-search pl-10"></i>
+                        <input type="text" class="pl-6" placeholder="Search" (input)="search(search2,2)" [(ngModel)]="search2">
+                    </div>
+                </td>
+                <td>
+                    <div class="searchInput">
+                        <i class="bi bi-search pl-10"></i>
+                        <input type="text" class="pl-6" placeholder="Search"
+                            (input)="search(search3,3)" [(ngModel)]="search3">
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr *ngFor="let item of userDataList" class="userdata">
+                <td>{{item.username}} <br>
+                    <span class="color-grey">
+                        {{item.email}}
+                    </span>
+                </td>
+                <td>{{item.company.name}}</td>
+                <td>{{item.company.designation}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
